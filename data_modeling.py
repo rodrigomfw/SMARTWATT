@@ -88,8 +88,7 @@ if __name__ == '__main__':
     
     X_test = scaler.transform(test_[features].values)
     y_test = np.array(test_["Power"])
-    
-
+   
     kfold = KFold(n_splits=5, random_state=1337) # k=10, split the data into 10 equal parts
     xyz = []
     rmse = []
@@ -128,8 +127,6 @@ if __name__ == '__main__':
     fig = plt.gcf()
     fig.set_size_inches(8,5)
     plt.show()        
-    
-    
     
     num_iter = 200
     init_points = 10
