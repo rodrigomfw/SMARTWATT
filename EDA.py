@@ -22,9 +22,7 @@ if __name__ == '__main__':
     test = pd.read_csv('data/id_'+id+'_test.csv', sep=';')
     if id == '51':
         train = train[1454:]   
-    
-
-    
+        
     # Feature Engineering
     train['hour'] = train['predictiondate'].apply(lambda x: int(x[11:13]))
     train['day'] = train['predictiondate'].apply(lambda x: int(x[:2]))
@@ -33,7 +31,6 @@ if __name__ == '__main__':
     test['day'] = test['predictiondate'].apply(lambda x: int(x[:2]))
     test['month'] = test['predictiondate'].apply(lambda x: int(x[3:5]))
 
-    
     # Missing data
     total = train.isnull().sum().sort_values(ascending=False)
     percent = (train.isnull().sum()/train.isnull().count()).sort_values(ascending=False)
